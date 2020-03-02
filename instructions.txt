@@ -1,0 +1,48 @@
+FONCTIONNALITÉS
+===============
+- rechercher stations
+- afficher leurs caractéristiques et la disponibilité des vélos et des places libres
+
+
+PAGE D'ACCUEIL
+==============
+- Liste des stations en service
+- Pour chacune:
+     - nom
+     - commune
+     - disponibilités (vélo + places libres)
+- Carte: 1 marqueur = 1 station
+     - popup (nom, commune, disponibilités)
+- Clique sur une station de la liste:
+     - carte: ouverture de la popup + centrer la carte + zommer sur cette station
+     - liste: assurer que la station est dans la partie visible de la liste (scroll), la mettre en «sur-brillance»
+     - détails: afficher les infos détaillées
+     
+- Formulaire de recherche
+     - envoie -> rechargement de la page (GET ?) + synchronisation carte
+     
+     - recherche selon: nom, commune, nb vélos dispo (minimal), nb place dispo (minimal), en service / hors-service / toutes
+     
+ => ERGONOMIE
+ 
+ 
+ ENVIRONNEMENT
+ =============
+ 
+ - Opérationnel sur webtp
+ - XHTML5
+ - Cartographie -> Librairie Leaflet
+ - Droits d'auteurs: avoir les droits sur les images
+     - Données MEL: licence ETALAB (doit être mentionné)
+     - Page CRÉDITS (origine ressources utilisées)
+     
+ 
+ DONNÉES
+ =======
+ 
+ Lien: http://vlille.fil.univ-lille1.fr
+ 
+ -> Ajout de paramètres possible (ex: nbVelosDispo=15&commune=LILLE)
+ -> nbVelosDispo = nb minimal
+ 
+ 

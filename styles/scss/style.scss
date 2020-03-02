@@ -1,0 +1,114 @@
+@import 'header';
+@import 'stations';
+@import 'infos';
+@import 'footer';
+@import 'modal';
+
+body {
+  background: linear-gradient(#06BEB6, #48B1BF);
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  &, input {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+body,
+button,
+input,
+input::placeholder {
+  color: white;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+a, button, i, input {
+  color: inherit;
+  transition: .2s;
+}
+
+.link {
+  text-decoration: none;
+  position: relative;
+  font-weight: bold;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 105%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transform-origin: left center;
+    transition: .3s;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+main {
+  box-sizing: border-box;
+  width: 100%;
+  display: grid;
+  position: relative;
+  grid-template-columns: auto 1fr auto;
+  height: 80vh;
+
+  .subtitle {
+    font-size: 2em;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.card {
+  padding: .8em;
+  border-radius: .5em;
+  background: rgba(white, .5);
+}
+
+.highlight {
+  background: white;
+  color: #06BEB6;
+}
+
+.infos, .stations {
+  padding: 0 1em;
+}
+
+.infos-container, .stations-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: rgba(white, .2);
+  border-radius: 10em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(white, .5);
+  border-radius: 10em;
+}
+
+#leaflet-map {
+  position: relative;
+  height: 100%;
+}
+
+.subtitle {
+  font-size: 2em;
+}

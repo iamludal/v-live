@@ -1,0 +1,34 @@
+div.infos-main-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max-content;
+  padding: 1em 2em;
+  align-self: center;
+  margin-bottom: 1em;
+
+  .name {
+    font-weight: 700;
+    font-size: 1.5em;
+  }
+
+  .city {
+
+  }
+}
+
+.info-title {
+  font-weight: 700;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1em;
+  align-items: center;
+  max-width: 15em;
+
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}

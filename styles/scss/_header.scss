@@ -1,0 +1,36 @@
+header {
+  width: 100%;
+  position: relative;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em;
+  box-sizing: border-box;
+  height: 15vh;
+}
+
+.main-title {
+  font-size: 3em;
+  margin: 0;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 10em;
+  border-radius: 1000em;
+  padding: .3em .6em;
+  border: none;
+  background: rgba(white, .5);
+
+  &:hover {
+    background: rgba(white, .3);
+
+    i {
+      transform: rotate(-5deg);
+    }
+  }
+
+}

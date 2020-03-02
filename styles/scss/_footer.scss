@@ -1,0 +1,22 @@
+footer {
+  padding: 1em;
+  font-size: .8em;
+  text-align: center;
+  height: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span:not(:last-child) {
+    margin-right: 1em;
+    position: relative;
+
+    &::after {
+      content: "|";
+      position: absolute;
+      right: -.5em;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
