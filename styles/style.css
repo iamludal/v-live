@@ -58,6 +58,14 @@ header {
           flex-direction: column;
   max-width: 20em;
   white-space: nowrap;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.station i {
+  -webkit-transition: 0s;
+  transition: 0s;
 }
 
 .station:not(:last-child) {
@@ -101,24 +109,28 @@ div.infos-main-title {
 }
 
 div.infos-main-title .name {
-  font-weight: 700;
+  font-weight: bold;
   font-size: 1.5em;
 }
 
 .info-title {
-  font-weight: 700;
+  font-weight: bold;
+}
+
+.info-value {
+  text-align: right;
 }
 
 .info {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
   gap: 1em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 15em;
+  width: 15em;
 }
 
 .info:not(:last-child) {
@@ -172,10 +184,14 @@ footer span:not(:last-child)::after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  display: none;
+  opacity: 0;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 .modal-content {
-  padding: 1em;
+  padding: 1.5em;
   background: #06BEB6;
   border-radius: 1em;
   width: 30em;
@@ -192,8 +208,8 @@ footer span:not(:last-child)::after {
 .modal-content .numbers {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
   gap: 1em;
 }
 
@@ -208,34 +224,17 @@ footer span:not(:last-child)::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   text-align: center;
 }
 
-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-input {
-  padding: .6em .8em;
-  border-radius: .5em;
-  outline: none;
-  border: none;
-  background: rgba(255, 255, 255, 0.2);
-  border: .2em solid transparent;
+.modal-content input, .modal-content select {
   margin-bottom: 1.5em;
 }
 
-input:focus, input:active {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-label {
+.modal-content label {
   margin-bottom: .5em;
 }
 
@@ -257,6 +256,27 @@ label {
           box-shadow: 0 0 0 0.2em rgba(255, 255, 255, 0.4);
 }
 
+option {
+  color: #06BEB6;
+  background: white;
+  border: none;
+  outline: none;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+input[type="number"] {
+  width: 5em;
+}
+
 body {
   background: -webkit-gradient(linear, left top, left bottom, from(#06BEB6), to(#48B1BF));
   background: linear-gradient(#06BEB6, #48B1BF);
@@ -272,36 +292,53 @@ body {
           flex-direction: column;
 }
 
-body, body input {
+body, body input, body select {
   font-family: 'Montserrat', sans-serif;
 }
 
 body,
 button,
 input,
-input::-webkit-input-placeholder {
+input::-webkit-input-placeholder,
+select {
   color: white;
 }
 
 body,
 button,
 input,
-input:-ms-input-placeholder {
+input:-ms-input-placeholder,
+select {
   color: white;
 }
 
 body,
 button,
 input,
-input::-ms-input-placeholder {
+input::-ms-input-placeholder,
+select {
   color: white;
 }
 
 body,
 button,
 input,
-input::placeholder {
+input::placeholder,
+select {
   color: white;
+}
+
+input, select {
+  padding: .6em .8em;
+  border-radius: .5em;
+  outline: none;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  border: .2em solid transparent;
+}
+
+input:active, input:focus, select:active, select:focus {
+  background: rgba(255, 255, 255, 0.4);
 }
 
 button {
@@ -339,6 +376,11 @@ a, button, i, input {
   width: 100%;
 }
 
+.subtitle {
+  font-size: 2em;
+  font-weight: 400;
+}
+
 main {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -352,8 +394,6 @@ main {
 }
 
 main .subtitle {
-  font-size: 2em;
-  font-weight: 500;
   margin: 0;
   text-align: center;
 }
@@ -398,8 +438,4 @@ main .subtitle {
 #leaflet-map {
   position: relative;
   height: 100%;
-}
-
-.subtitle {
-  font-size: 2em;
 }

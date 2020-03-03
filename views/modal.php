@@ -1,6 +1,6 @@
 <div class="modal">
     <div class="modal-content">
-        <form action="">
+        <form action="" method="GET">
             <h2 class="subtitle">
                 Rechercher une station <i class="fas fa-directions"></i>
             </h2>
@@ -24,9 +24,21 @@
                     </label>
                     <input type="number" min="0" name="slots" id="slots">
                 </div>
+                <div class="col">
+                    <label for="state">
+                        État
+                    </label>
+                    <select name="state" id="state">
+                        <option value="TOUTES" selected>Toutes</option>
+                        <option value="EN SERVICE">En service</option>
+                        <option value="HORS SERVICE">Hors service</option>
+                    </select>
+                </div>
             </div>
 
             <button class="btn-submit">Rechercher <i class="fas fa-search"></i></button>
         </form>
     </div>
 </div>
+
+<script src="../js/modal.js"></script>
