@@ -11,7 +11,7 @@ class Station
         $this->name = $fields->nom;
         $this->city = $fields->commune;
         $this->state = $fields->etat;
-        $this->connectionState = $fields->etatConnexion;
+        $this->connectionState = $fields->etatconnexion;
         $this->bikes = $fields->nbvelosdispo;
         $this->slots = $fields->nbplacesdispo;
     }

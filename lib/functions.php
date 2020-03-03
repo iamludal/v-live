@@ -16,35 +16,19 @@ function create_station($name, $city, $availableBikes, $freeSlots, $highlight = 
     $city = ucwords(strtolower($city));
     $class = $highlight ? "highlight" : "";
 
-    return <<< HTML
+    $html = "<div class=\"station card $class\">";
+    $html .=   '<span class="station-title">';
+    $html .=      '<i class="fas fa-map-marker-alt"></i>';
+    $html .=        " $name ･ $city ";
+    $html .=    '</span>';
+    $html .=   '<span>';
+    $html .=      '<i class="fas fa-check-circle"></i>';
+    $html .=      ' Libres: ';
+    $html .=       "<span class=\"station-bikes\">$availableBikes</span> Vélos";
+    $html .=       ' | ';
+    $html .=       "<span class=\"station-slots\">$freeSlots</span> Emplacements";
+    $html .=    '</span>';
+    $html .= '</div>';
 
-    <div class="station card $class">
-        <span class="station-title">
-            <i class="fas fa-map-marker-alt"></i>
-            $name ･ $city
-        </span>
-        <span>
-            <i class="fas fa-check-circle"></i>
-            Libres:
-            <span class="station-bikes">$availableBikes</span> Vélos
-            |
-            <span class="station-slots">$freeSlots</span> Emplacements
-        </span>
-    </div>
-
-    HTML;
+    return $html;
 }
-
-/*
-<div class="station card">
-    <span class="station-title">
-        <i class="fas fa-map-marker-alt"></i>
-        FORT DE MONS ･ MONS EN BAROEUL
-    </span>
-    <span>
-        <i class="fas fa-check-circle"></i>
-        Libres: <span class="station-bikes">2</span> Vélos |
-        <span class="station-slots">6</span> Emplacements
-    </span>
-</div>
-*/
