@@ -14,9 +14,9 @@ $stations = json_decode(file_get_contents("http://vlille.fil.univ-lille1.fr"));
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>V'Live</title>
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
@@ -29,7 +29,7 @@ $stations = json_decode(file_get_contents("http://vlille.fil.univ-lille1.fr"));
             <i class="fas fa-biking"></i> V'Live
         </h1>
 
-        <button class="search subtitle">
+        <button class="search subtitle" id="show-modal">
             <span>Recherche</span>
             <i class="fas fa-search"></i>
         </button>
@@ -47,8 +47,7 @@ $stations = json_decode(file_get_contents("http://vlille.fil.univ-lille1.fr"));
                 <?php
 
                 foreach ($stations as $station) {
-                    $st = new Station($station);
-                    echo create_station($st->name, $st->city, $st->bikes, $st->slots);
+                    echo create_station(new Station($station));
                 }
 
                 ?>
@@ -66,25 +65,46 @@ $stations = json_decode(file_get_contents("http://vlille.fil.univ-lille1.fr"));
                     <span class="name">DE GAULLE</span>
                     <span class="city"><i class="fas fa-map-marker-alt"></i> LA MADELEINE </span>
                 </div>
+                <!--// create_infos() -->
                 <div class="info card">
-                    <span class="info-title">Vélos disponibles</span>
-                    <span>2</span>
+                    <span class="info-title">
+                        <i class="fas fa-thumbtack"></i>
+                        Adresse
+                    </span>
+                    <span class="info-value">318, RUE ROGER SALENGRO</span>
                 </div>
                 <div class="info card">
-                    <span class="info-title">Emplacements disponibles</span>
-                    <span>8</span>
+                    <span class="info-title">
+                        <i class="fas fa-biking"></i> Vélos disponibles
+                    </span>
+                    <span class="info-value">2</span>
                 </div>
                 <div class="info card">
-                    <span class="info-title">TPE</span>
-                    <span>Oui</span>
+                    <span class="info-title">
+                        <i class="fas fa-parking"></i>
+                        Emplacements disponibles
+                    </span>
+                    <span class="info-value">8</span>
                 </div>
                 <div class="info card">
-                    <span class="info-title">État</span>
-                    <span>En service</span>
+                    <span class="info-title">
+                        <i class="fas fa-credit-card"></i>
+                        TPE
+                    </span>
+                    <span class="info-value">Oui</span>
                 </div>
                 <div class="info card">
-                    <span class="info-title">État Connexion</span>
-                    <span>En Ligne</span>
+                    <span class="info-title">
+                        <i class="fas fa-cog"></i>
+                        État
+                    </span>
+                    <span class="info-value">En service</span>
+                </div>
+                <div class="info card">
+                    <span class="info-title">
+                        <i class="fas fa-wifi"></i> État Connexion
+                    </span>
+                    <span class="info-value">En Ligne</span>
                 </div>
             </div>
         </div>
@@ -98,7 +118,7 @@ $stations = json_decode(file_get_contents("http://vlille.fil.univ-lille1.fr"));
     </footer>
 
     <script src="//kit.fontawesome.com/c7aac9c8ff.js" crossorigin="anonymous"></script>
-    <script src="../js/map.js"></script>
+    <script src="js/map.js"></script>
 
 </body>
 
