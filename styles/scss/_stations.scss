@@ -3,6 +3,12 @@
   flex-direction: column;
   max-width: 20em;
   white-space: nowrap;
+  cursor: pointer;
+  transition: .2s;
+
+  i {
+    transition: 0s;
+  }
   
   &:not(:last-child) {
     margin-bottom: 1em;
