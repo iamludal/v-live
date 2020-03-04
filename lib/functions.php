@@ -24,13 +24,6 @@ function create_station($station, $highlight = false)
     $html .=      '<i class="fa fa-map-marker"></i>';
     $html .=        " $station->name ･ $station->city ";
     $html .=    '</span>';
-    $html .=   '<span>';
-    $html .=      '<i class="fa fa-check-circle"></i>';
-    $html .=      ' Libres: ';
-    $html .=       "<span class=\"station-bikes\">$station->bikes</span> Vélos";
-    $html .=       ' | ';
-    $html .=       "<span class=\"station-slots\">$station->slots</span> Emplacements";
-    $html .=    '</span>';
     $html .= '</div>';
 
     return $html;

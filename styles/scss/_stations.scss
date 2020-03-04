@@ -11,7 +11,7 @@
   }
   
   &:not(:last-child) {
-    margin-bottom: 1em;
+    margin-bottom: .4em;
   }
 }
 
@@ -22,11 +22,6 @@
 }
 
 .station-title {
-  margin-bottom: .5em;
   text-overflow: ellipsis;
   overflow: hidden;
-}
-
-.station-bikes, .station-slots {
-  font-weight: bold;
 }

@@ -68,7 +68,7 @@ header {
 }
 
 .station:not(:last-child) {
-  margin-bottom: 1em;
+  margin-bottom: .4em;
 }
 
 .stations-container {
@@ -78,13 +78,8 @@ header {
 }
 
 .station-title {
-  margin-bottom: .5em;
   text-overflow: ellipsis;
   overflow: hidden;
-}
-
-.station-bikes, .station-slots {
-  font-weight: bold;
 }
 
 div.infos-main-title {
@@ -283,8 +278,8 @@ input[type="number"] {
 }
 
 body {
-  background: -webkit-gradient(linear, left top, left bottom, from(#06BEB6), to(#48B1BF));
-  background: linear-gradient(#06BEB6, #48B1BF);
+  background: -webkit-gradient(linear, left top, right top, from(#48B1BF), to(#06BEB6));
+  background: linear-gradient(to right, #48B1BF, #06BEB6);
   height: 100vh;
   width: 100vw;
   margin: 0;
@@ -441,6 +436,12 @@ main .subtitle {
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 10em;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 #leaflet-map {
