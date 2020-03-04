@@ -33,4 +33,5 @@ class Modal {
     }
 }
 
-new Modal();
+
+document.addEventListener('DOMContentLoaded', () => { new Modal() });
