@@ -2,7 +2,7 @@
     <div class="modal-content">
         <form action="" method="GET">
             <h2 class="subtitle">
-                Rechercher une station <i class="fas fa-directions"></i>
+                Rechercher une station <i class="fa fa-map-signs"></i>
             </h2>
 
             <label for="name">Nom</label>
@@ -36,7 +36,7 @@
                 </div>
             </div>
 
-            <button class="btn-submit">Rechercher <i class="fas fa-search"></i></button>
+            <button class="btn-submit">Rechercher <i class="fa fa-search"></i></button>
         </form>
     </div>
 </div>
