@@ -9,11 +9,11 @@ class Station
     {
         $fields = $station->fields;
         $this->name = $fields->nom;
-        $this->city = ucwords(strtolower($fields->commune));
+        $this->city = ucwords(mb_strtolower($fields->commune));
         $this->bikes = $fields->nbvelosdispo;
         $this->slots = $fields->nbplacesdispo;
-        $this->address = ucwords(strtolower($fields->adresse));
-        $this->state = ucwords(strtolower($fields->etat));
+        $this->address = ucwords(mb_strtolower($fields->adresse));
+        $this->state = ucwords(mb_strtolower($fields->etat));
         $this->geo = $fields->geo;
 
         $connectionStates = array(
