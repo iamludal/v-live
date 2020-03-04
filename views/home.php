@@ -80,8 +80,8 @@ $stations = json_decode(file_get_contents(__DIR__ . '/data.json'));
         <span>Copyright © 2020 Ludovic Chombeau - Romain Follet</span>
         <a class="link" href="">Crédits</a>
     </footer>
-    <!-- 
-    <script src="//kit.fontawesome.com/c7aac9c8ff.js" crossorigin="anonymous"></script> -->
+
+    <script src="js/VliveImage.js"></script>
     <script src="js/map.js"></script>
 
 </body>
