@@ -24,8 +24,8 @@ class VliveImageColors {
     this.koColor = koColor;
     this.warningColor = warningColor;
     let svgDoc = VliveImageColors.svgDoc.cloneNode(true);
-    svgDoc.querySelector('#velos-tspan').textContent = velos + ' v';
-    svgDoc.querySelector('#places-tspan').textContent = places + ' p';
+    svgDoc.querySelector('#velos-tspan').textContent = velos + ' V';
+    svgDoc.querySelector('#places-tspan').textContent = places + ' P';
     svgDoc.querySelector('#velos-zone').style.fill = this.getColor(velos);
     svgDoc.querySelector('#places-zone').style.fill = this.getColor(places);
     this.blob = new Blob([new XMLSerializer().serializeToString(svgDoc)], { type: 'image/svg+xml' });
