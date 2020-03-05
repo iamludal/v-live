@@ -1,10 +1,6 @@
 <?php
 
 require_once(dirname(__DIR__) . '/lib/functions.php');
-require_once(dirname(__DIR__) . '/lib/Station.class.php');
-
-$stations = json_decode(file_get_contents(__DIR__ . '/data.json'));
-// $stations = json_decode(file_get_contents("http://vlille.fil.univ-lille1.fr"));
 
 ?>
 
@@ -43,11 +39,11 @@ $stations = json_decode(file_get_contents(__DIR__ . '/data.json'));
                 Stations <i class="fa fa-map-signs"></i>
             </h2>
 
-            <div class="stations-container">
+            <ul class="stations-container">
                 <?php foreach ($stations as $station) : ?>
-                    <?= create_station(new Station($station)) ?>
+                    <?= create_station($station) ?>
                 <?php endforeach ?>
-            </div>
+            </ul>
         </div>
         <div class="map" id="leaflet-map">
         </div>
@@ -64,12 +60,14 @@ $stations = json_decode(file_get_contents(__DIR__ . '/data.json'));
                     </span>
                 </div>
 
-                <?= create_info("fa-thumb-tack", "address", "Adresse") ?>
-                <?= create_info("fa-bicycle", "bikes", "Vélos disponibles") ?>
-                <?= create_info("fa-check", "slots", "Emplacements disponibles") ?>
-                <?= create_info("fa-credit-card", "tpe", "Paiement par carte") ?>
-                <?= create_info("fa-cog", "state", "État") ?>
-                <?= create_info("fa-wifi", "connectionstate", "État connexion") ?>
+                <ul>
+                    <?= create_info("fa-thumb-tack", "address", "Adresse") ?>
+                    <?= create_info("fa-bicycle", "bikes", "Vélos disponibles") ?>
+                    <?= create_info("fa-check", "slots", "Emplacements disponibles") ?>
+                    <?= create_info("fa-credit-card", "tpe", "Paiement par carte") ?>
+                    <?= create_info("fa-cog", "state", "État") ?>
+                    <?= create_info("fa-wifi", "connectionstate", "État connexion") ?>
+                </ul>
             </div>
         </div>
     </main>

@@ -11,7 +11,7 @@ function create_station($station, $highlight = false)
     $class = $highlight ? "highlight" : "";
     $geo = json_encode($station->geo);
 
-    $html = "<div class=\"station card $class\" data-geo=\"$geo\" ";
+    $html = "<li class=\"station card $class\" data-geo=\"$geo\" ";
     $html .=                                   "data-address=\"$station->address\" ";
     $html .=                                   "data-city=\"$station->city\" ";
     $html .=                                   "data-bikes=\"$station->bikes\" ";
@@ -24,7 +24,7 @@ function create_station($station, $highlight = false)
     $html .=      '<i class="fa fa-map-marker"></i>';
     $html .=        " $station->name ･ $station->city ";
     $html .=    '</span>';
-    $html .= '</div>';
+    $html .= '</li>';
 
     return $html;
 }
@@ -39,13 +39,43 @@ function create_station($station, $highlight = false)
  */
 function create_info($icon, $property, $title)
 {
-    $html = "<div class=\"info card\" data-property=\"$property\">";
+    $html = "<li class=\"info card\" data-property=\"$property\">";
     $html .=   '<span class="info-title">';
     $html .=      "<i class=\"fa $icon\"></i> $title";
     $html .=   '</span>';
     $html .=   "<span class=\"info-value\"></span>";
-    $html .= '</div>';
+    $html .= '</li>';
     return $html;
+}
+
+
+function convert_to_station_object($station)
+{
+    return new Station($station);
+}
+
+function compare_stations_by_name($station1, $station2)
+{
+    $name1 = $station1->name;
+    $name2 = $station2->name;
+    $name_cmp = strcmp($name1, $name2);
+
+    $city1 = $station1->city;
+    $city2 = $station2->city;
+
+    return $name_cmp != 0 ? $name_cmp : strcmp($city1, $city2);
+}
+
+function compare_stations_by_city($station1, $station2)
+{
+    $city1 = $station1->city;
+    $city2 = $station2->city;
+    $city_cmp = strcmp($city1, $city2);
+
+    $name1 = $station1->name;
+    $name2 = $station2->name;
+
+    return $city_cmp != 0 ? $city_cmp : strcmp($name1, $name2);
 }
 
 /* 
