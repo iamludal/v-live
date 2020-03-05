@@ -136,3 +136,23 @@ main {
   position: relative;
   height: 100%;
 }
+
+.sort-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.btn {
+  padding: .5em 1em;
+  border-radius: .5em;
+  background: white;
+  border: none;
+  font-weight: bold;
+  color: #06BEB6;
+
+  &:focus, &:active {
+    box-shadow: 0 0 0 .2em rgba(white, .4);
+  }
+}

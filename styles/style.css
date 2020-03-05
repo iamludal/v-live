@@ -238,32 +238,7 @@ footer span:not(:last-child)::after {
   margin-bottom: .5em;
 }
 
-.btn-submit {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  padding: .5em 1em;
-  border-radius: .5em;
-  background: white;
-  border: none;
-  font-weight: bold;
-  color: #06BEB6;
-  font-size: 1.1em;
-}
-
-.btn-submit:focus, .btn-submit:active {
-  -webkit-box-shadow: 0 0 0 0.2em rgba(255, 255, 255, 0.4);
-          box-shadow: 0 0 0 0.2em rgba(255, 255, 255, 0.4);
-}
-
-option {
-  color: #06BEB6;
-  background: white;
-  border: none;
-  outline: none;
-}
-
-form {
+.modal-content form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -271,6 +246,20 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.btn-submit {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 1.1em;
+}
+
+option {
+  color: #06BEB6;
+  background: white;
+  border: none;
+  outline: none;
 }
 
 input[type="number"] {
@@ -452,4 +441,29 @@ main .subtitle {
 #leaflet-map {
   position: relative;
   height: 100%;
+}
+
+.sort-form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1em;
+}
+
+.btn {
+  padding: .5em 1em;
+  border-radius: .5em;
+  background: white;
+  border: none;
+  font-weight: bold;
+  color: #06BEB6;
+}
+
+.btn:focus, .btn:active {
+  -webkit-box-shadow: 0 0 0 0.2em rgba(255, 255, 255, 0.4);
+          box-shadow: 0 0 0 0.2em rgba(255, 255, 255, 0.4);
 }

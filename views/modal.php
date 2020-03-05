@@ -36,7 +36,7 @@
                 </div>
             </div>
 
-            <button class="btn-submit">Rechercher <i class="fa fa-search"></i></button>
+            <button class="btn btn-submit">Rechercher <i class="fa fa-search"></i></button>
         </form>
     </div>
 </div>

@@ -39,6 +39,21 @@ require_once(dirname(__DIR__) . '/lib/functions.php');
                 Stations <i class="fa fa-map-signs"></i>
             </h2>
 
+            <form action="" method="GET" class="sort-form">
+                <div class="container">
+                    <span>Trier par:</span>
+                    <label>
+                        <input type="radio" name="sort" value="name" selected>
+                        Nom
+                    </label>
+                    <label>
+                        <input type="radio" name="sort" value="city">
+                        Ville
+                    </label>
+                </div>
+                <button class="btn">Trier <i class="fa fa-sort"></i></button>
+            </form>
+
             <ul class="stations-container">
                 <?php foreach ($stations as $station) : ?>
                     <?= create_station($station) ?>
