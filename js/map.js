@@ -2,16 +2,12 @@ class LeafletMap {
 
     constructor() {
         const ULILLE_POS = [50.61, 3.14];
-        this.map = L.map("leaflet-map");
-        this.currentStation = null
-        this.stationsList = document.querySelectorAll(".station")
-
         const infos = document.querySelector(".infos");
         this.infoName = infos.querySelector('.name');
         this.infoCity = infos.querySelector('.city');
-
-        // In order to have the correct height (scroll)
-        // this.setStationsContainerMaxHeight();
+        this.map = L.map("leaflet-map");
+        this.currentStation = null
+        this.stationsList = document.querySelectorAll(".station")
 
         // Set the first station as the current one
         this.setCurrentStation(this.stationsList[0]);
@@ -38,6 +34,11 @@ class LeafletMap {
         if (points.length > 0) this.map.fitBounds(points);
 
         this.map.setView(ULILLE_POS, 14);
+        this.setStationsContainerMaxHeight();
+
+        window.addEventListener("resize", () => {
+            this.setStationsContainerMaxHeight()
+        })
     }
 
     // Setup the listeners for a given station (click on it and on its marker)
@@ -86,10 +87,10 @@ class LeafletMap {
     // the scroll bar.
     setStationsContainerMaxHeight() {
         const container = document.querySelector(".stations-container");
-        const mainStyle = window.getComputedStyle(document.querySelector("main"));
+        const mainStyle = getComputedStyle(document.querySelector("main"));
         const mainHeight = parseInt(mainStyle.height);
         container.style.maxHeight = (mainHeight - container.offsetTop) + "px";
     }
 }
 
-window.addEventListener('DOMContentLoaded', () => { new LeafletMap() });
+window.addEventListener("DOMContentLoaded", () => { new LeafletMap() })
