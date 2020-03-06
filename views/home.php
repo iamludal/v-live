@@ -1,9 +1,3 @@
-<?php
-
-require_once(dirname(__DIR__) . '/lib/functions.php');
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -43,7 +37,7 @@ require_once(dirname(__DIR__) . '/lib/functions.php');
                 <div class="container">
                     <span>Trier par:</span>
                     <label>
-                        <input type="radio" name="sort" value="name" selected>
+                        <input type="radio" name="sort" value="name" checked>
                         Nom
                     </label>
                     <label>

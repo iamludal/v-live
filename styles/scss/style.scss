@@ -3,6 +3,7 @@
 @import 'infos';
 @import 'footer';
 @import 'modal';
+@import 'radio-btn';
 
 body {
   background: linear-gradient(to right, #48B1BF, #06BEB6);
@@ -116,6 +117,10 @@ main {
   margin-top: 1em;
 }
 
+.stations-container {
+  width: 20em;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   background: rgba(white, .2);
@@ -142,6 +147,10 @@ main {
   grid-template-columns: 1fr auto;
   align-items: center;
   margin-top: 1em;
+
+  label {
+    margin-left: .5em;
+  }
 }
 
 .btn {

@@ -1,0 +1,25 @@
+input[type="radio"] {
+  position: relative;
+  height: 1.1em;
+}
+
+input[type="radio"]::after {
+  content: "";
+  z-index: 10;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  border: .3em solid white;
+  border-radius: 10em;
+  transition: .1s;
+  height: 1.2em;
+  width: 1.2em;
+}
+
+input[type="radio"]:checked::after {
+  background: #06BEB6;
+}
