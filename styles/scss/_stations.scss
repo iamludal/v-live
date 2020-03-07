@@ -8,12 +8,16 @@
 
   .station-title {
     display: block;
-    max-width: 20em;
     position: relative;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
   }
+}
+
+.stations {
+  position: relative;
+  width: 20em;
 }
 
 .stations-container {
@@ -22,8 +26,10 @@
   padding-right: .5em;
   display: grid;
   grid-auto-flow: row;
+  grid-template-columns: 100%;
   gap: .4em;
   margin-top: 1em;
+  width: 100%;
 }
 
 .sort-form {

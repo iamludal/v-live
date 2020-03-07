@@ -60,11 +60,15 @@ header {
 
 .station .station-title {
   display: block;
-  max-width: 20em;
   position: relative;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.stations {
+  position: relative;
+  width: 20em;
 }
 
 .stations-container {
@@ -74,8 +78,11 @@ header {
   display: -ms-grid;
   display: grid;
   grid-auto-flow: row;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
   gap: .4em;
   margin-top: 1em;
+  width: 100%;
 }
 
 .sort-form {
