@@ -6,6 +6,7 @@ class Modal {
 
         this.display_modal_btn = document.getElementById("show-modal");
         this.modal = document.querySelector(".modal");
+        this.firstInput = document.querySelector(".modal input");
         this.display_modal_btn.addEventListener('click', this.showModal);
         this.modal.addEventListener('click', this.hideModal)
         window.addEventListener('keyup', (ev) => {
@@ -15,6 +16,7 @@ class Modal {
 
     showModal() {
         this.modal.style.display = 'flex';
+        this.firstInput.focus();
         setTimeout(() => { this.modal.style.opacity = 1 }, 10);
     }
 
