@@ -22,7 +22,7 @@ function create_station($station, $highlight = false)
     $html .=                                   "data-name=\"$station->name\">";
     $html .=   '<span class="station-title">';
     $html .=      '<i class="fa fa-map-marker"></i>';
-    $html .=        " $station->name ･ $station->city ";
+    $html .=        " <strong>{$station->bikes}V | {$station->slots}P</strong> $station->name ･ $station->city ";
     $html .=    '</span>';
     $html .= '</li>';
 
@@ -48,12 +48,25 @@ function create_info($icon, $property, $title)
     return $html;
 }
 
-
+/**
+ * Convert a station response into a station object (of Station class)
+ * 
+ * @param string $station the station to convert
+ * @param Station the station object
+ */
 function convert_to_station_object($station)
 {
     return new Station($station);
 }
 
+/**
+ * Compare 2 stations by their name
+ * 
+ * @param Station $station1 the first station
+ * @param Station $station2 the second station
+ * @return int an integer, < 0 if the name of the first station if smaller than
+ * the second one, > 0 otherwise. Return 0 if they are the same
+ */
 function compare_stations_by_name($station1, $station2)
 {
     $name1 = $station1->name;
@@ -66,6 +79,14 @@ function compare_stations_by_name($station1, $station2)
     return $name_cmp != 0 ? $name_cmp : strcmp($city1, $city2);
 }
 
+/**
+ * Compare 2 stations by their city
+ * 
+ * @param Station $station1 the first station
+ * @param Station $station2 the second station
+ * @return int an integer, < 0 if the city of the first station if smaller than
+ * the second one, > 0 otherwise. Return 0 if they are the same
+ */
 function compare_stations_by_city($station1, $station2)
 {
     $city1 = $station1->city;
@@ -77,15 +98,3 @@ function compare_stations_by_city($station1, $station2)
 
     return $city_cmp != 0 ? $city_cmp : strcmp($name1, $name2);
 }
-
-/* 
-<div class="info card">
-    <span class="info-title">
-        <i class="fa fa-cog"></i>
-        État
-    </span>
-    <span class="info-value">En service</span>
-</div>
-
-
-*/
