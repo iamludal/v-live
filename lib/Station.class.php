@@ -3,7 +3,7 @@
 class Station
 {
 
-    public $name, $city, $state, $connectionState, $bikes, $slots;
+    public $name, $city, $bikes, $slots, $address, $state, $geo;
 
     function __construct($station)
     {
@@ -15,15 +15,5 @@ class Station
         $this->address = ucwords(mb_strtolower($fields->adresse));
         $this->state = ucwords(mb_strtolower($fields->etat));
         $this->geo = $fields->geo;
-
-        $connectionStates = array(
-            "CONNECTED" => "En ligne",
-            "DISCONNECTED" => "Hors ligne"
-        );
-
-        $tpeValues = array("AVEC TPE" => "Oui", "SANS TPE" => "Non");
-
-        $this->connectionState = $connectionStates[$fields->etatconnexion];
-        $this->tpe = $tpeValues[$fields->type];
     }
 }

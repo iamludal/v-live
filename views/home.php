@@ -73,9 +73,7 @@
                     <?= create_info("fa-thumb-tack", "address", "Adresse") ?>
                     <?= create_info("fa-bicycle", "bikes", "Vélos disponibles") ?>
                     <?= create_info("fa-check", "slots", "Emplacements disponibles") ?>
-                    <?= create_info("fa-credit-card", "tpe", "Paiement par carte") ?>
                     <?= create_info("fa-cog", "state", "État") ?>
-                    <?= create_info("fa-wifi", "connectionstate", "État connexion") ?>
                 </ul>
             </div>
         </div>
