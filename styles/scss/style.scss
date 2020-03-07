@@ -3,7 +3,7 @@
 @import 'infos';
 @import 'footer';
 @import 'modal';
-@import 'radio-btn';
+@import 'inputs';
 
 body {
   background: linear-gradient(to right, #48B1BF, #06BEB6);
@@ -27,27 +27,9 @@ select {
   color: white;
 }
 
-input, select {
-  padding: .6em .8em;
-  border-radius: .5em;
-  outline: none;
-  border: none;
-  background: rgba(white, .2);
-  border: .2em solid transparent;
-
-  &:active, &:focus {
-    background: rgba(white, .4);
-  }
-}
-
 ul {
   padding: 0;
   margin: 0;
-}
-
-button {
-  outline: none;
-  cursor: pointer;
 }
 
 a, button, i, input {
@@ -77,9 +59,33 @@ a, button, i, input {
   }
 }
 
+.btn {
+  padding: .5em 1em;
+  border-radius: .5em;
+  background: white;
+  border: none;
+  font-weight: bold;
+  color: #06BEB6;
+
+  &:focus, &:active {
+    box-shadow: 0 0 0 .2em rgba(white, .4);
+  }
+}
+
 .subtitle {
   font-size: 2em;
-  font-weight: 400;
+  font-weight: normal;
+}
+
+.card {
+  padding: .8em;
+  border-radius: .5em;
+  background: rgba(white, .5);
+}
+
+.highlight {
+  background: white;
+  color: #06BEB6;
 }
 
 main {
@@ -96,29 +102,8 @@ main {
   }
 }
 
-.card {
-  padding: .8em;
-  border-radius: .5em;
-  background: rgba(white, .5);
-}
-
-.highlight {
-  background: white;
-  color: #06BEB6;
-}
-
 .infos, .stations {
   padding: 0 1em;
-}
-
-.infos-container, .stations-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1em;
-}
-
-.stations-container {
-  width: 20em;
 }
 
 ::-webkit-scrollbar {
@@ -140,28 +125,4 @@ main {
 #leaflet-map {
   position: relative;
   height: 100%;
-}
-
-.sort-form {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  margin-top: 1em;
-
-  label {
-    margin-left: .5em;
-  }
-}
-
-.btn {
-  padding: .5em 1em;
-  border-radius: .5em;
-  background: white;
-  border: none;
-  font-weight: bold;
-  color: #06BEB6;
-
-  &:focus, &:active {
-    box-shadow: 0 0 0 .2em rgba(white, .4);
-  }
 }

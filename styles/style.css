@@ -48,15 +48,6 @@ header {
 }
 
 .station {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  max-width: 20em;
-  white-space: nowrap;
   cursor: pointer;
   -webkit-transition: .2s;
   transition: .2s;
@@ -67,22 +58,42 @@ header {
   transition: 0s;
 }
 
-.station:not(:last-child) {
-  margin-bottom: .4em;
+.station .station-title {
+  display: block;
+  max-width: 20em;
+  position: relative;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .stations-container {
   overflow: auto;
   max-height: 0;
   padding-right: .5em;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: row;
+  gap: .4em;
+  margin-top: 1em;
 }
 
-.station-title {
-  text-overflow: ellipsis;
-  overflow: hidden;
+.sort-form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1em;
 }
 
-div.infos-main-title {
+.sort-form label {
+  margin-left: .5em;
+}
+
+.infos-main-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -100,17 +111,27 @@ div.infos-main-title {
   margin-bottom: 1em;
 }
 
-div.infos-main-title .name {
+.infos-main-title .name {
   font-weight: bold;
   font-size: 1.5em;
 }
 
-.info-title {
-  font-weight: bold;
-}
-
-.info-value {
-  text-align: right;
+.infos-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  margin-top: 1em;
+  width: 18em;
 }
 
 .info {
@@ -128,14 +149,12 @@ div.infos-main-title .name {
   margin-bottom: 1em;
 }
 
-.infos-container {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  width: 18em;
+.info .info-title {
+  font-weight: bold;
+}
+
+.info .info-value {
+  text-align: right;
 }
 
 footer {
@@ -195,8 +214,8 @@ footer span:not(:last-child)::after {
   background: #06BEB6;
   border-radius: 1em;
   width: 30em;
-  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 
@@ -258,12 +277,27 @@ footer span:not(:last-child)::after {
 option {
   color: #06BEB6;
   background: white;
-  border: none;
-  outline: none;
 }
 
 input[type="number"] {
   width: 5em;
+}
+
+input, select {
+  padding: .8em 1em;
+  border-radius: .5em;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+}
+
+input:active, input:focus, select:active, select:focus {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+button {
+  outline: none;
+  cursor: pointer;
 }
 
 input[type="radio"] {
@@ -346,27 +380,9 @@ select {
   color: white;
 }
 
-input, select {
-  padding: .6em .8em;
-  border-radius: .5em;
-  outline: none;
-  border: none;
-  background: rgba(255, 255, 255, 0.2);
-  border: .2em solid transparent;
-}
-
-input:active, input:focus, select:active, select:focus {
-  background: rgba(255, 255, 255, 0.4);
-}
-
 ul {
   padding: 0;
   margin: 0;
-}
-
-button {
-  outline: none;
-  cursor: pointer;
 }
 
 a, button, i, input {
@@ -399,9 +415,34 @@ a, button, i, input {
   width: 100%;
 }
 
+.btn {
+  padding: .5em 1em;
+  border-radius: .5em;
+  background: white;
+  border: none;
+  font-weight: bold;
+  color: #06BEB6;
+}
+
+.btn:focus, .btn:active {
+  -webkit-box-shadow: 0 0 0 0.2em rgba(255, 255, 255, 0.4);
+          box-shadow: 0 0 0 0.2em rgba(255, 255, 255, 0.4);
+}
+
 .subtitle {
   font-size: 2em;
-  font-weight: 400;
+  font-weight: normal;
+}
+
+.card {
+  padding: .8em;
+  border-radius: .5em;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.highlight {
+  background: white;
+  color: #06BEB6;
 }
 
 main {
@@ -423,34 +464,8 @@ main .subtitle {
   text-align: center;
 }
 
-.card {
-  padding: .8em;
-  border-radius: .5em;
-  background: rgba(255, 255, 255, 0.5);
-}
-
-.highlight {
-  background: white;
-  color: #06BEB6;
-}
-
 .infos, .stations {
   padding: 0 1em;
-}
-
-.infos-container, .stations-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-top: 1em;
-}
-
-.stations-container {
-  width: 20em;
 }
 
 ::-webkit-scrollbar {
@@ -473,33 +488,4 @@ main .subtitle {
 #leaflet-map {
   position: relative;
   height: 100%;
-}
-
-.sort-form {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 1em;
-}
-
-.sort-form label {
-  margin-left: .5em;
-}
-
-.btn {
-  padding: .5em 1em;
-  border-radius: .5em;
-  background: white;
-  border: none;
-  font-weight: bold;
-  color: #06BEB6;
-}
-
-.btn:focus, .btn:active {
-  -webkit-box-shadow: 0 0 0 0.2em rgba(255, 255, 255, 0.4);
-          box-shadow: 0 0 0 0.2em rgba(255, 255, 255, 0.4);
 }

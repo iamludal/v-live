@@ -1,17 +1,18 @@
 .station {
-  display: flex;
-  flex-direction: column;
-  max-width: 20em;
-  white-space: nowrap;
   cursor: pointer;
   transition: .2s;
 
   i {
     transition: 0s;
   }
-  
-  &:not(:last-child) {
-    margin-bottom: .4em;
+
+  .station-title {
+    display: block;
+    max-width: 20em;
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
 
@@ -19,9 +20,19 @@
   overflow: auto;
   max-height: 0;
   padding-right: .5em;
+  display: grid;
+  grid-auto-flow: row;
+  gap: .4em;
+  margin-top: 1em;
 }
 
-.station-title {
-  text-overflow: ellipsis;
-  overflow: hidden;
+.sort-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  margin-top: 1em;
+
+  label {
+    margin-left: .5em;
+  }
 }

@@ -1,4 +1,4 @@
-div.infos-main-title {
+.infos-main-title {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,12 +13,13 @@ div.infos-main-title {
   }
 }
 
-.info-title {
-  font-weight: bold;
-}
-
-.info-value {
-  text-align: right;
+.infos-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-top: 1em;
+  width: 18em;
 }
 
 .info {
@@ -30,10 +31,12 @@ div.infos-main-title {
   &:not(:last-child) {
     margin-bottom: 1em;
   }
-}
 
-.infos-container {
-  justify-content: flex-start;
-  align-items: stretch;
-  width: 18em;
+  .info-title {
+    font-weight: bold;
+  }
+  
+  .info-value {
+    text-align: right;
+  }
 }
