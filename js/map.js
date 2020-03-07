@@ -1,16 +1,13 @@
 class LeafletMap {
 
     constructor() {
-        const ULILLE_POS = [50.61, 3.14];
         const infos = document.querySelector(".infos");
         this.infoName = infos.querySelector('.name');
         this.infoCity = infos.querySelector('.city');
         this.map = L.map("leaflet-map");
-        this.currentStation = null
-        this.stationsList = document.querySelectorAll(".station")
-
-        // Set the first station as the current one
-        this.setCurrentStation(this.stationsList[0]);
+        this.currentStation = null;
+        this.stationsList = document.querySelectorAll(".station");
+        this.stationsContainer = document.querySelector(".stations-container");
 
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
             attribution: '©️ OpenStreetMap contributors'
@@ -20,25 +17,28 @@ class LeafletMap {
 
         // Add a marker to the map for each station
         for (let station of this.stationsList) {
-            const name = station.dataset.name;
-            const { bikes, slots } = station.dataset;
+            const { bikes, slots, name, city } = station.dataset;
             const icon = VliveImage.getInstance(bikes, slots).getLeafletIcon();
             const geo = JSON.parse(station.dataset.geo);
-            const marker = L.marker(geo, { icon })
-            marker.addTo(this.map).bindPopup(`<strong>${name}</strong>`);
-            this.setupStationListeners(station, marker, this.map)
-            points.push(geo)
+            const marker = L.marker(geo, { icon });
+            const popupTxt = `<strong>${name}</strong><br><center>${city}</center>`;
+
+            marker.addTo(this.map).bindPopup(popupTxt);
+            this.setupStationListeners(station, marker, this.map);
+            points.push(geo);
         }
 
         // fit map bounds to the list of points
         if (points.length > 0) this.map.fitBounds(points);
 
-        this.map.setView(ULILLE_POS, 14);
+        // Set the first station as the current one
+        this.stationsList[0].click();
+
         this.setStationsContainerMaxHeight();
 
         window.addEventListener("resize", () => {
             this.setStationsContainerMaxHeight()
-        })
+        });
     }
 
     // Setup the listeners for a given station (click on it and on its marker)
@@ -46,18 +46,17 @@ class LeafletMap {
         station.addEventListener("click", () => {
             marker.openPopup();
             this.setCurrentStation(station);
-            map.setView(marker.getLatLng(), 15)
-        })
+            map.setView(marker.getLatLng(), 15);
+        });
 
         marker.on("click", () => {
             this.setCurrentStation(station);
 
-            const firstStation = document.querySelector(".station");
-
-            document.querySelector(".stations-container").scroll({
-                top: station.offsetTop - firstStation.offsetTop,
+            this.stationsContainer.scroll({
+                top: station.offsetTop - this.stationsContainer.offsetTop,
                 behavior: "smooth"
             });
+
             map.setView(marker.getLatLng(), 15);
         })
     }
@@ -77,7 +76,7 @@ class LeafletMap {
         mainName.textContent = station.dataset.name;
         mainCity.textContent = station.dataset.city;
 
-        for (const info of document.querySelectorAll('.info')) {
+        for (let info of document.querySelectorAll('.info')) {
             const prop = info.dataset.property;
             info.querySelector('.info-value').textContent = station.dataset[prop];
         }
@@ -86,7 +85,7 @@ class LeafletMap {
     // Set the correct height for the .stations-container div in order to have
     // the scroll bar.
     setStationsContainerMaxHeight() {
-        const container = document.querySelector(".stations-container");
+        const container = this.stationsContainer;
         const mainStyle = getComputedStyle(document.querySelector("main"));
         const mainHeight = parseInt(mainStyle.height);
         container.style.maxHeight = (mainHeight - container.offsetTop) + "px";
