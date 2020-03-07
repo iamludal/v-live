@@ -37,11 +37,11 @@
                 <div class="container">
                     <span>Trier par:</span>
                     <label>
-                        <input type="radio" name="sort" value="name" checked>
+                        <input type="radio" name="sort" value="name" <?= $sort === "name" ? "checked" : "" ?>>
                         Nom
                     </label>
                     <label>
-                        <input type="radio" name="sort" value="city">
+                        <input type="radio" name="sort" value="city" <?= $sort === "city" ? "checked" : "" ?>>
                         Ville
                     </label>
                 </div>
@@ -79,12 +79,12 @@
         </div>
     </main>
 
-    <?php require_once(__DIR__ . '/modal.php') ?>
-
     <footer>
         <span>Copyright © 2020 Ludovic Chombeau - Romain Follet</span>
         <a class="link" href="">Crédits</a>
     </footer>
+
+    <?php require_once(__DIR__ . '/modal.php') ?>
 
     <script src="js/VliveImage.js"></script>
     <script src="js/map.js"></script>
