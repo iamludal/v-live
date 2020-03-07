@@ -29,9 +29,9 @@
                         État
                     </label>
                     <select name="state" id="state">
-                        <option value="TOUTES" selected>Toutes</option>
-                        <option value="EN SERVICE">En service</option>
-                        <option value="HORS SERVICE">Hors service</option>
+                        <option value="" selected>Toutes</option>
+                        <option value="EN%20SERVICE">En service</option>
+                        <option value="HORS%20SERVICE">Hors service</option>
                     </select>
                 </div>
             </div>
