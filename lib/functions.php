@@ -17,8 +17,6 @@ function create_station($station, $highlight = false)
     $html .=                                   "data-bikes=\"$station->bikes\" ";
     $html .=                                   "data-slots=\"$station->slots\" ";
     $html .=                                   "data-state=\"$station->state\" ";
-    $html .=                                   "data-connectionstate=\"$station->connectionState\" ";
-    $html .=                                   "data-tpe=\"$station->tpe\" ";
     $html .=                                   "data-name=\"$station->name\">";
     $html .=   '<span class="station-title">';
     $html .=      '<i class="fa fa-map-marker"></i>';
