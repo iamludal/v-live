@@ -48,6 +48,16 @@
                 <button class="btn">Trier <i class="fa fa-sort"></i></button>
             </form>
 
+            <p>
+                <strong><?= $nbOfStations ?></strong>
+
+                <?php if ($nbOfStations != 1) : ?>
+                    Stations trouvées
+                <?php else : ?>
+                    Station trouvée
+                <?php endif ?>
+            </p>
+
             <ul class="stations-container">
                 <?php foreach ($stations as $station) : ?>
                     <?= create_station($station) ?>
