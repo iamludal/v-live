@@ -13,9 +13,10 @@ function create_station($station)
     return <<<HTML
     <li class="station card" data-geo="$geo" data-address="{$station->address}"
                         data-bikes="{$station->bikes}" data-slots="{$station->slots}"
-                        data-state="{$station->state}" data-name="{$station->name}">
+                        data-state="{$station->state}" data-name="{$station->name}"
+                        data-city="{$station->city}">
         <span class="station-title">
-            <i class="fa fa-map-farker"></i>
+            <i class="fa fa-map-marker"></i>
             <strong>{$station->bikes}V | {$station->slots}P</strong>
             {$station->name} ･ {$station->city}
         </span>
