@@ -91,7 +91,7 @@
 
     <footer>
         <span>Copyright © 2020 Ludovic Chombeau - Romain Follet</span>
-        <a class="link" href="">Crédits</a>
+        <a class="link" href="views/credits.html">Crédits</a>
     </footer>
 
     <?php require_once(__DIR__ . '/modal.php') ?>
