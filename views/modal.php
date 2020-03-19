@@ -36,6 +36,9 @@
                 </div>
             </div>
 
+            <!-- To keep the current selected sort method -->
+            <input type="hidden" name="sort" value="<?= $_GET["sort"] ?>">
+
             <button class="btn btn-submit">Rechercher <i class="fa fa-search"></i></button>
         </form>
     </div>
