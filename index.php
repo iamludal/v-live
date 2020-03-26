@@ -5,7 +5,14 @@ require_once(__DIR__ . '/lib/Station.class.php');
 require_once(__DIR__ . '/lib/verifyParams.php');
 
 $url = "http://vlille.fil.univ-lille1.fr";
-$params = "commune=$city&nom=$name&nbvelosdispo=$bikes&nbplacesdispo=$slots";
+$params = "&nbvelosdispo=$bikes&nbplacesdispo=$slots";
+
+foreach ($names as $name)
+    $params .= "&nom=" . trim($name);
+
+foreach ($cities as $city)
+    $params .= "&commune=" . trim($city);
+
 if ($state !== "") $params .= "&etat=$state";
 $url .= "?$params";
 

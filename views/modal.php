@@ -5,10 +5,11 @@
                 Rechercher une station <i class="fa fa-map-signs"></i>
             </h2>
 
-            <label for="name">Nom</label>
+            <label for="name">Nom(s) <small>(Séparés pas des virgules)</small></label>
             <input type="text" name="name" id="name">
 
-            <label for="city">Commune</label>
+            <label for="city">Commune(s) <small>(Séparées pas des virgules)</small></label>
+
             <input type="text" name="city" id="city">
 
             <div class="numbers">
@@ -37,7 +38,7 @@
             </div>
 
             <!-- To keep the current selected sort method -->
-            <input type="hidden" name="sort" value="<?= $_GET["sort"] ?>">
+            <input type="hidden" name="sort" value="<?= $sort ?>">
 
             <button class="btn btn-submit">Rechercher <i class="fa fa-search"></i></button>
         </form>

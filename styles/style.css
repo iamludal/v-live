@@ -290,6 +290,10 @@ input[type="number"] {
   width: 5em;
 }
 
+small {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 input, select {
   padding: .8em 1em;
   border-radius: .5em;

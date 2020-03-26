@@ -45,12 +45,13 @@
                         Ville
                     </label>
                 </div>
-                <input type="hidden" name="name" value="<?= $name ?>">
-                <input type="hidden" name="city" value="<?= $city ?>">
+
+                <input type="hidden" name="city" value="<?= join(",", $cities) ?>">
+                <input type="hidden" name="name" value="<?= join(",", $names) ?>">
                 <input type="hidden" name="bikes" value="<?= $bikes ?>">
                 <input type="hidden" name="slots" value="<?= $slots ?>">
                 <input type="hidden" name="state" value="<?= $state ?>">
-                
+
                 <button class="btn">Trier <i class="fa fa-sort"></i></button>
             </form>
 

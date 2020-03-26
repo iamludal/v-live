@@ -9,12 +9,14 @@ $name = filter_input(METHOD, 'name', FILTER_SANITIZE_STRING, [
         "default" => ""
     ]
 ]);
+$names = explode(",", $name);
 
 $city = filter_input(METHOD, 'city', FILTER_SANITIZE_STRING, [
     "options" => [
         "default" => ""
     ]
 ]);
+$cities = explode(",", $city);
 
 $bikes = filter_input(METHOD, 'bikes', FILTER_VALIDATE_INT, [
     "options" => [
