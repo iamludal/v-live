@@ -5,6 +5,7 @@ Binôme: Ludovic Chombeau / Romain Follet
 URL DU PROJET
 =====================================================================
 http://webtp.fil.univ-lille1.fr/~chombeau/Projet-1/
+http://webtp.fil.univ-lille1.fr/~follet/Projet_1/
 
 
 
@@ -42,15 +43,16 @@ DIFFICULTÉS RENCONTRÉES
   que nous avons dû abandonner en raison des consignes du projet)
      -> Résolution: utilisation du fichier css fourni par cette
         même librairie (il n'y a donc plus de JS à proprement parler)
-        
+
 - garder le tri sélectionné lorsque l'utilisateur effectue une
   nouvelle recherche, et vice versa (garder les paramètres actuels
   lorsque l'utilisateur change la méthode de tri).
      -> Résolution: input de type hidden qui stockent les paramètres
         actuels
-        
-- css : faire que la div contenant toutes les stations prenne toute
-  la taille de la map, sans compter le titre et le formulaire qui sont
-  au dessus de celle-ci
-     -> Résolution: Javascript (dans la classe map)
+
+- garder les paramètres sélectionnés par l'utilisateur lorsqu'il change
+  la méthode tri sur la liste des stations
+     -> Résolution: comme pour le problème précédent, ajout d'inputs
+     de type hidden qui stockent les paramètres courants
+
 
