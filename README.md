@@ -1,6 +1,6 @@
 # V-LIVE 🚴
 
-## Url du projet 🔗
+## URL du projet 🔗
 
 [http://webtp.fil.univ-lille1.fr/~chombeau/Projet-1/]()
 
@@ -15,7 +15,7 @@ Le sujet a été traité dans son intégralité.
 N/A
 
 
-## Limitations du projet 
+## Limitations du projet ➕
 
 - Pas d'affichage des stations dans un rayon de `x` kilomètres
 *(selon une adresse fournie ou la géolocalisation de l'utilisateur)*
