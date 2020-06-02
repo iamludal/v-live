@@ -2,7 +2,7 @@
 
 ## 🔗 URL du projet
 
-[http://webtp.fil.univ-lille1.fr/~chombeau/Projet-1/]
+[http://webtp.fil.univ-lille1.fr/~chombeau/Projet-1/]()
 
 > Le VPN de la fac doit être activé pour pouvoir y accéder
 
