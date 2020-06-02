@@ -52,7 +52,7 @@ station sélectionnée *(à l'instar des GPS)*
 - garder le tri sélectionné lorsque l'utilisateur effectue une
   nouvelle recherche, et vice versa *(garder les paramètres actuels
   lorsque l'utilisateur change la méthode de tri)*.
-     * **Résolution:** input de type hidden qui stockent les paramètres
+     * **Résolution:** inputs de type hidden qui stockent les paramètres
         actuels
 
 - garder les paramètres sélectionnés par l'utilisateur lorsqu'il change
