@@ -1,21 +1,36 @@
-# V-LIVE 🚴
+# 🚴 V-Live
 
-## URL du projet 🔗
+## 🔗 URL du projet
 
-[http://webtp.fil.univ-lille1.fr/~chombeau/Projet-1/]()
+[http://webtp.fil.univ-lille1.fr/~chombeau/Projet-1/]
+
+> Le VPN de la fac doit être activé pour pouvoir y accéder
 
 
-## Ce qui a été traité ✅
+## 📸 Aperçu du site
+
+- Page principale
+
+![Page principale](https://i.imgur.com/kSBpZob.jpg)
+
+- Recherche de station(s)
+
+![Recherche de stations](https://i.imgur.com/zLW8sgg.png)
+
+
+## ℹ️ Détails
+
+### ✅ Ce qui a été traité
 
 Le sujet a été traité dans son intégralité.
 
 
-## Ce qui n'a pas été traité ❌
+### ❌ Ce qui n'a pas été traité 
 
 N/A
 
 
-## Limitations du projet ➕
+### 🤔 Limitations du projet
 
 - Pas d'affichage des stations dans un rayon de `x` kilomètres
 *(selon une adresse fournie ou la géolocalisation de l'utilisateur)*
@@ -27,7 +42,7 @@ stations qui apparaitraient dans une liste de favoris.
 station sélectionnée *(à l'instar des GPS)*
 
 
-## Difficultés rencontrées 🔧
+### 🔧 Difficultés rencontrées
 
 - gestion des icônes *(d'abord avec une libraire JS externe,
   que nous avons dû abandonner en raison des consignes du projet)*
