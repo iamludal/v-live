@@ -30,16 +30,16 @@ Le sujet a été traité dans son intégralité.
 N/A
 
 
-### 🤔 Limitations du projet
+### 🤔 Limites du projet
 
 - Pas d'affichage des stations dans un rayon de `x` kilomètres
-*(selon une adresse fournie ou la géolocalisation de l'utilisateur)*
+*(selon une adresse fournie ou à partir de la géolocalisation de l'utilisateur)*
 
 - Pas de gestion de favoris: l'utilisateur pourrait choisir certaines
-stations qui apparaitraient dans une liste de favoris.
+stations qu'il utilise le plus souvent.
 
 - Pas d'affichage du chemin pour aller de l'endroit actuel jusqu'à la
-station sélectionnée *(à l'instar des GPS)*
+station sélectionnée *(à l'instar des GPS)*.
 
 
 ### 🔧 Difficultés rencontrées
@@ -52,12 +52,11 @@ station sélectionnée *(à l'instar des GPS)*
 - garder le tri sélectionné lorsque l'utilisateur effectue une
   nouvelle recherche, et vice versa *(garder les paramètres actuels
   lorsque l'utilisateur change la méthode de tri)*.
-     * **Résolution:** inputs de type hidden qui stockent les paramètres
-        actuels
+     * **Résolution:** inputs de type `hidden` qui stockent les
+     paramètres actuels
 
 - garder les paramètres sélectionnés par l'utilisateur lorsqu'il change
   la méthode tri sur la liste des stations
-     * **Résolution:** comme pour le problème précédent, ajout d'inputs
-     de type hidden qui stockent les paramètres courants
+     * **Résolution:** même résolution que pour le problème précédent.
 
 
