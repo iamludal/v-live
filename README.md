@@ -2,10 +2,8 @@
 
 # 📸 Aperçu du site
 
-**1.** Page principale
 ![Page principale](https://i.imgur.com/kSBpZob.jpg)
 
-**2.** Recherche de stations
 ![Recherche de stations](https://i.imgur.com/zLW8sgg.png)
 
 
