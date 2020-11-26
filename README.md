@@ -1,29 +1,28 @@
-# 🚴 V-Live
+<h1 align="center">🚴 V-Live</h1>
 
-## 📸 Aperçu du site
 
-- Page principale
+# 📸 Aperçu du site
 
 ![Page principale](https://i.imgur.com/kSBpZob.jpg)
-
-- Recherche de station(s)
+> Page principale
 
 ![Recherche de stations](https://i.imgur.com/zLW8sgg.png)
+> Recherche de stations
 
 
-## ℹ️ Détails
+# ℹ️ Détails
 
-### ✅ Ce qui a été traité
+## ✅ Ce qui a été traité
 
 Le sujet a été traité dans son intégralité.
 
 
-### ❌ Ce qui n'a pas été traité 
+## ❌ Ce qui n'a pas été traité 
 
 N/A
 
 
-### 🤔 Limites du projet
+## 🤔 Limites du projet
 
 - Pas d'affichage des stations dans un rayon de `x` kilomètres
 *(selon une adresse fournie ou à partir de la géolocalisation de l'utilisateur)*
@@ -35,7 +34,7 @@ stations qu'il utilise le plus souvent.
 station sélectionnée *(à l'instar des GPS)*.
 
 
-### 🔧 Difficultés rencontrées
+## 🔧 Difficultés rencontrées
 
 - gestion des icônes *(d'abord avec une libraire JS externe,
   que nous avons dû abandonner en raison des consignes du projet)*
