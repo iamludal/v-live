@@ -1,13 +1,12 @@
-<h1 align="center">🚴 V-Live</h1>
 
 
 # 📸 Aperçu du site
 
+**1.** Page principale
 ![Page principale](https://i.imgur.com/kSBpZob.jpg)
-> Page principale
 
+**2.** Recherche de stations
 ![Recherche de stations](https://i.imgur.com/zLW8sgg.png)
-> Recherche de stations
 
 
 # ℹ️ Détails
